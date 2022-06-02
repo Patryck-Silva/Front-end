@@ -1,0 +1,21 @@
+.cadastro-titulo {
+
+    font-weight: bold !important;
+    color: #000000 !important;
+}
+
+.botao-cancelar{
+
+    border-color: #c23616 !important;
+    /* background-color: #dcdde1 !important; */
+    color: black !important;
+    margin: 20px !important;
+}
+
+.botao-confirmar{
+
+    border-color: #c23616 !important;
+    /* background-color: #dcdde1 !important; */
+    color: black !important;
+    margin: 20px !important;
+}

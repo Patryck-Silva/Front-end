@@ -1,57 +1,61 @@
-import React, { useState, ChangeEvent,useEffect} from 'react';
-import { Grid, Box, Typography, TextField, Button} from '@material-ui/core';
-import { Link,useNavigate } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
-import {login} from '../../services/Service';
+import React, { useState, ChangeEvent, useEffect } from 'react';
+import { Grid, Box, Typography, TextField, Button } from '@material-ui/core';
+import { Link, useNavigate } from 'react-router-dom';
+import { login } from '../../services/Service';
 import UserLogin from '../../models/UserLogin';
 import './Login.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToken } from '../../store/tokens/actions';
 
 function Login() {
 
   let navigate = useNavigate();
-    
 
-  const [token,setToken]= useLocalStorage('token');
+  const dispatch = useDispatch ()
 
+  const [token, setToken] = useState('');
+
+  
   const [UserLogin, setUserLogin] = useState<UserLogin>(
-      {
-        id: 0,
-        nome:'' ,
-        usuario:'',
-        senha: '',
-        foto: '',
-        bio: '',
-        dataNascimento: '',
-        tipo:  '',
-        token:''
-      }
+    {
+      id: 0,
+      nome: '',
+      usuario: '',
+      senha: '',
+      foto: '',
+      bio: '',
+      dataNascimento: '',
+      tipo: '',
+      token: ''
+    }
   )
-  function updatedModel(e: ChangeEvent<HTMLInputElement>){
-      setUserLogin({
-          ...UserLogin,
-          [e.target.name]: e.target.value 
-      })
+  function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+    setUserLogin({
+      ...UserLogin,
+      [e.target.name]: e.target.value
+    })
   }
-  useEffect(() =>{
-      if(token!= ''){
-          navigate('/home')
-      }
-  },[token])
-  async function logar(e:ChangeEvent<HTMLFormElement>){
-      e.preventDefault();
-      try{
-          await login(`/usuarios/logar`, UserLogin, setToken)
-          
-          alert('Usuario logado com sucesso!');
-      }
-      catch(error){
-          alert('Dados do usuário divergente.Erro ao logar!')
-      }
+  useEffect(() => {
+    if (token != '') {
+      dispatch(addToken(token))
+      navigate('/home')
+    }
+  }, [token])
+  async function logar(e: ChangeEvent<HTMLFormElement>) {
+    e.preventDefault();
+    try {
+      await login(`/usuarios/logar`, UserLogin, setToken)
+
+      alert('Usuario logado com sucesso!');
+    }
+    catch (error) {
+      alert('Dados do usuário divergente.Erro ao logar!')
+    }
   }
 
   return (
 
-    
+
     // grid da imagem da esquerda
     <Grid container className='gridMaiorLogin'>
       <Grid className='grid1Login' xs={12}>
@@ -64,9 +68,9 @@ function Login() {
             {/* box do botao */}
             <Box textAlign='center' >
               <Button className='botaoLogar' type='submit' variant='contained'>
-                  Logar
-                </Button>
-              </Box>
+                Logar
+              </Button>
+            </Box>
           </form>
           <Box marginTop={2} >
             <Typography className='textoSemConta'>Não tem uma conta?</Typography>

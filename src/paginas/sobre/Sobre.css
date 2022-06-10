@@ -1,82 +1,363 @@
-/* CSS DIV PRINCIPAL */
+@import url('https://fonts.googleapis.com/css2?family=Mohave:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mohave:wght@300;400;600;700&family=Podkova&display=swap');
 
-.principal {
-
-    direction: "row";
-    justify-content: "center";
-    align-items: center;
-    background-color: #dcdde1;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.centralizar{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+:root {
+    --black: #000000;
+    --soft-black: #1f1d1c;
+    --deep-grey: #2F3640;
+    --light-grey: #F5F6FA;
+    --medio-grey: #D9D9D9;
+    --white: #FFFFFF;
+    --yellow: #ECEF50;
+    --margin: 90px;
+    --margin-top: 150px;
+    --padding-dinamico: clamp(35px, 8%, 70px);
+
 }
 
-/* CSS DIV PRIMARIO */
-
-
-
-
-
-/* CSS DIV SECUNDARIO  */
-
-.div2principal{
-
-    background-color: rgb(187, 227, 227);
+/* CONTAINER GERAL ABRIGANDO AS 3 SEÇÕES */
+.pagina-sobre {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-    margin: 10px;
-}
-
-.div2textos{
-
-    background-color: rgb(2, 99, 99);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    text-align: justify;
-
 }
 
 
+/* PARTE DA INTRODUÇÃO */
 
-/* CSS DIV EQUIPE DE DEVS */
+/* container principal introdução */
+.sobre-introducao {
+    background-color: var(--soft-black);
+    min-height: 100vh;
+}
 
-.teste{
-    background-color: rgb(2, 99, 99);
+.sobre-introducao-cabecalho{
+    margin: var(--margin);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding: 50px;
-    margin: 15px;
+    align-items: center;
+    margin-top: var(--margin-top);
+}
+
+
+.sobre-introducao-cabecalho-textos{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     
 
 }
 
-.teste2{
-    background-color: brown;
-    text-align: center;
-    margin: 15px;
-
+.sobre-introducao-cabecalho-texto1{
+    color: #C3BCBC;
+    font-size: 24px;
+    
 }
 
-.teste3{
-    background-color: darkgoldenrod;
+.sobre-introducao-cabecalho-texto2{
+    color: white;
+    margin-top: 20px;
+    font-size: 48px;
+    font-family: 'Mohave', sans-serif;
+    
+}
+
+.sobre-img{
+    display: flex;
+    margin-left:500px;
+}
+
+
+
+/* container textos secundários */
+
+.introducao-textos-secundarios{
+
     display: flex;
     flex-direction: column;
-}
-
-
-/* DIV CONTATO */
-
-.contato{
-    background-color: blue;
-    text-align: center;
+    margin: var(--margin);
+    color: var(--white);
+    margin-bottom: var(--margin);
 
 }
 
+.introducao-textos-secundarios-p{
+    padding-top: 20px;
+    color: white;
+    font-size: 24px;
+    font-family: 'Podkova', serif;
 
+}
+
+
+
+/* PÁGINA SOBRE OS DEVS */
+
+.sobre-devs {
+
+    background-color: var(--soft-black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+.sobre-devs-titulo{
+    border-bottom: 0.4px solid black;
+    color: white;
+    padding: 20px;
+    margin-top: var(--margin-top);
+    font-size: 48px;
+    font-family: 'Mohave', sans-serif;
+
+
+}
+
+.sobre-devs-cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: var(--margin);
+    width: 100%;
+    
+}
+
+.sobre-devs-cards2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: var(--margin-top);
+    width: 100%;
+}
+
+/* =========================CSS CARD ======================== */
+
+.border {
+    height: 370px;
+    width: 290px;
+    background: transparent;
+    border-radius: 10px;
+    transition: border 1s;
+
+}
+
+.border:hover {
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.card {
+
+    background: #808080;
+    border-radius: 10px;
+    transition: background 0.8s;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 70px 63px -60px #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: var(--padding-dinamico);
+   
+}
+
+
+/* CSS DO CARD */
+
+/* =======BEA======== */
+
+.card1 {
+
+    background: url("https://i.imgur.com/5GK7ee6.jpg") center center no-repeat;
+    background-size: 300px;
+}
+
+.card1:hover {
+
+    background: url("https://i.imgur.com/5GK7ee6.jpg") left center no-repeat;
+    background-size: 600px;
+}
+
+.card1:hover h2 {
+    opacity: 1;
+}
+
+.card1:hover .icons {
+    opacity: 1;
+}
+
+/* =======CIPRI======== */
+
+.card2 {
+
+    background: url("https://i.pinimg.com/736x/66/93/5b/66935bdcd27a216c8c5bc73e2003cd43--wallpapers-android-beyonce-knowles.jpg") center center no-repeat;
+    background-size: 300px;
+}
+
+.card2:hover {
+
+    background: url("https://i.pinimg.com/736x/66/93/5b/66935bdcd27a216c8c5bc73e2003cd43--wallpapers-android-beyonce-knowles.jpg") left center no-repeat;
+    background-size: 600px;
+}
+
+.card2:hover h2 {
+    opacity: 1;
+}
+
+.card2:hover .icons {
+    opacity: 1;
+}
+
+/* =======JONATHAN======== */
+
+.card3 {
+
+    background: url("https://i.pinimg.com/originals/53/1b/a3/531ba3fac803b6b40b9f85fd6b5733f4.jpg") center center no-repeat;
+    background-size: 300px;
+}
+
+.card3:hover {
+
+    background: url("https://i.pinimg.com/originals/53/1b/a3/531ba3fac803b6b40b9f85fd6b5733f4.jpg") left center no-repeat;
+    background-size: 600px;
+}
+
+.card3:hover h2 {
+    opacity: 1;
+}
+
+.card3:hover .icons {
+    opacity: 1;
+}
+
+/* =======PATRYCK======== */
+
+.card4 {
+
+    background: url("https://i.imgur.com/hwtUNqU.jpg.jpg") center center no-repeat;
+    background-size: 300px;
+}
+
+.card4:hover {
+
+    background: url("https://i.imgur.com/hwtUNqU.jpg") left center no-repeat;
+    background-size: 600px;
+}
+
+.card4:hover h2 {
+    opacity: 1;
+}
+
+.card4:hover .icons {
+    opacity: 1;
+}
+
+/* =======PEDRO======== */
+
+.card5 {
+
+    background: url("https://conteudo.imguol.com.br/c/entretenimento/4e/2021/05/05/kanye-west-1620233547131_v2_3x4.jpg") center center no-repeat;
+    background-size: 300px;
+}
+
+.card5:hover {
+
+    background: url("https://conteudo.imguol.com.br/c/entretenimento/4e/2021/05/05/kanye-west-1620233547131_v2_3x4.jpg") left center no-repeat;
+    background-size: 600px;
+}
+
+.card5:hover h2 {
+    opacity: 1;
+}
+
+.card5:hover .icons {
+    opacity: 1;
+}
+
+/* =======VIVI======== */
+
+.card6 {
+
+    background: url("https://i.pinimg.com/736x/66/93/5b/66935bdcd27a216c8c5bc73e2003cd43--wallpapers-android-beyonce-knowles.jpg") center center no-repeat;
+    background-size: 300px;
+}
+
+.card6:hover {
+
+    background: url("https://i.pinimg.com/736x/66/93/5b/66935bdcd27a216c8c5bc73e2003cd43--wallpapers-android-beyonce-knowles.jpg") left center no-repeat;
+    background-size: 600px;
+}
+
+.card6:hover h2 {
+    opacity: 1;
+}
+
+.card6:hover .icons {
+    opacity: 1;
+}
+
+/* ============= */
+
+/* FORMATAÇÃO DOS TÍTULOS */
+.cardTitulo {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    color: rgba(238, 255, 0, 0.76);
+    margin: 20px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+/* FORMATAÇÃO DOS ICONES */
+.icons {
+
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: rgb(238, 255, 0);
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+
+    margin-top: 290px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.icone{
+    height: 30px;
+}
+
+a { color: inherit; }
+
+/* ============================================================= */
+
+/* PÁGINA DE CONTATO */
+.sobre-contato {
+
+    background-color: var(--light-grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+
+}
+
+.sobre-contato-cabecalho{
+    margin: var(--margin);
+    margin-top: var(--margin-top);
+}
+
+.sobre-contato-quem{
+    margin: var(--margin);
+}
+
+.sobre-contato-oque{
+    margin: var(--margin);
+}

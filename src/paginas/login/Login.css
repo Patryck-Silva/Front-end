@@ -1,61 +1,56 @@
-/* importando fonte */
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
-
 /* é o maior grid por tras do grid de login */
 .gridMaiorLogin {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-image: url('https://i.imgur.com/fhxWLFt.png');
-  height: calc(100vh - 108px - 108px);
+  min-height: 100vh;
+
 }
 
-/* é o grid da caixa de login */
-.grid1Login {
+.imagemGraph {
+  margin-bottom: 80px;
+  margin-top: 80px;
+}
+
+.gridInputs {
+  background-color: #CE7150;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
 
-/* estilizando textos */
-.textoLogin {
-  color: #000;
-  text-align: center;
-  font-family: 'Amatic SC', cursive !important;
-  font-size: 40px !important;
+.gridImagem {
+  background-color: #fff;
+  display: flex;
+  align-items: stretch;
 }
 
-.textoSemConta {
-  color: #000;
-  text-align: center;
-  font-family: 'Amatic SC', cursive !important;
-  font-size: 30px !important;
-}
-
-.textoCadastro {
-  color: #000;
-  text-align: center;
-  font-family: 'Amatic SC', cursive !important;
-  font-size: 25px !important;
-  font-weight: bold;
-}
-
-/* estilizando caixa de texto do usuario */
-.BoxForm {
-  background: #ffffff;
-  border-radius: 10px;
-  border: 2px solid #f3f354;
-  padding: 25px;
-
-}
-
-/* tirar sublinhado do botao logar */
-.text-decorator-nome {
-  text-decoration: none;
+.CaixaInput {
+  background-color: #fff;
+  border-radius: 5px;
 }
 
 .botaoLogar {
-  background-color: #f3f354 !important;
-  font-family: 'Amatic SC', cursive !important;
-  color: #000 !important;
+  width: 233px;
+  height: 38px;
+  margin-top: 30px !important;
+  background-color: #E58E26 !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 14px !important;
+}
+
+.botaoCadastro {
+  width: 427px;
+  height: 38px;
+  margin-top: 5px !important;
+  background-color: #576574 !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 13px !important;
+}
+
+.text-decorator-none {
+  text-decoration: none;
+}
+
+.textoCadastro {
+  color: #fff;
 }

@@ -1,0 +1,107 @@
+.GridContainer {
+  background-color: #EDEDED;
+  border-radius: 12px;
+  width: 950px !important;
+}
+
+.Forms {
+  display: flex;
+  flex-direction: column;
+}
+
+.BoxInputs {
+  width: 300px;
+  padding-right: 0px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.BoxMidia {
+  display: flex;
+  margin-left: 100px;
+  height: 100px !important;
+}
+
+.inputTitle {
+  width: 400px;
+  margin-top: 15px;
+  background-color: var(--medio-grey);
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  padding: 25px 10px 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+
+.BoxPositionForm {
+  display: flex;
+  height: 130px;
+}
+
+.inputTextArea {
+  margin-top: 15px;
+  width: 500px;
+  background-color: var(--medio-grey);
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  padding: 25px 10px 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  height: 200px !important;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  height: 56px;
+}
+
+
+
+.selectTema {
+  width: 200px;
+  margin-top: 30px !important;
+}
+
+
+.BotaoForm {
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background: #7a7878 !important;
+  background-size: 400%;
+  color: #fff;
+  width: 200px;
+  margin-bottom: 10px !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 13px !important;
+}
+
+.BotaoForm:hover::before {
+  transform: scaleX(1);
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+}
+
+.BotaoForm::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(82.3deg,
+      #FF7F6A 10.8%,
+      #bd5a4b 94.3%);
+  transition: all 0.475s;
+}

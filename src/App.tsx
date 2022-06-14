@@ -15,10 +15,25 @@ import store from './store/store';
 import CadastroPostagem from './components/postagem/cadastroPostagem/CadastroPostagem'
 import DeletarPostagem from './components/postagem/deletarPostagem/DeletarPostagem'
 import ListaPostagem from './components/postagem/listaPostagem/ListaPostagem';
+import FeedPostagem from './paginas/Feed/FeedPostagem';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import AtualizarUsuario from './components/usuarios/atualizarUsuario/AtualizarUsuario';
 
 function App() {
   return (
     <Provider store={store}>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Router>
         <Navbar />
         <div style={{ minHeight: '100vh' }}>
@@ -36,6 +51,8 @@ function App() {
             <Route path="/formulariopostagem" element={<CadastroPostagem />} />
             <Route path="/formulariopostagem/:id" element={<CadastroPostagem />} />
             <Route path="/deletarpostagem/:id" element={<DeletarPostagem />} />
+            <Route path='/feed' element={<FeedPostagem />} />
+            <Route path='/atualizarusuario' element={<AtualizarUsuario />} />
           </Routes>
         </div>
         <Footer />

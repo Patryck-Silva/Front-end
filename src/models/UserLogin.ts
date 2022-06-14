@@ -6,8 +6,8 @@ interface UserLogin {
     foto: string;
     bio: string;
     dataNascimento: string;
-    tipo:  string;
-    token?: string | null;
+    tipo: string;
+    token: string;
 
 }
 

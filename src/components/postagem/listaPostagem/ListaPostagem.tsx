@@ -1,43 +1,66 @@
 import React, { useEffect, useState } from 'react'
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core'
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+
 import { Link, useNavigate } from 'react-router-dom'
 
 import { useSelector } from 'react-redux'
 import { TokenState } from '../../../store/tokens/tokensReducer';
 
 import Postagem from '../../../models/Postagem'
-import { busca } from '../../../services/Service'
+import { busca, put } from '../../../services/Service'
 import { toast } from 'react-toastify';
 import './ListaPostagem.css'
 
 function ListaPostagem() {
 
-  let navigate = useNavigate()
+  const [posts, setPosts] = useState<Postagem[]>([])
 
-  const [posts, setPost] = useState<Postagem[]>([])
+  const [post, setPost] = useState<Postagem>({
+    id: 0,
+    titulo: "",
+    texto: "",
+    data: "",
+    curtir: 0,
+    tema: null,
+    midia: ''
+  })
 
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
-  );
+  )
+
+  let navigate = useNavigate();
 
   useEffect(() => {
     if (token === "") {
-      toast.error('Você precisa estar logado', {
+      toast.error('Você precisa estar logado para completar a ação', {
         position: "top-right",
-        autoClose: 2000,
+        autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: false,
         draggable: false,
-        theme: "colored",
         progress: undefined,
-      });
-      navigate("/login")
+        theme: "colored",
+
+      }); navigate("/login")
+
     }
   }, [token])
 
+  async function curtidas(id: number) {
+    await put(`/postagem/curtir/${id}`, post, setPost, {
+      headers: {
+        'Authorization': token
+      }
+    }
+    );
+    getPost()
+  }
+
   async function getPost() {
-    await busca("/postagem", setPost, {
+    await busca("/postagem", setPosts, {
       headers: {
         'Authorization': token
       }
@@ -55,7 +78,7 @@ function ListaPostagem() {
         <Box m={2} >
           <Card variant="outlined">
             <CardContent>
-
+              <img src={post.midia} alt="" width='500px' height='500px' />
               <Typography color="textSecondary" gutterBottom>
                 Postagens
               </Typography>
@@ -95,7 +118,10 @@ function ListaPostagem() {
                     </Button>
                   </Box>
                 </Link>
-
+                <Box mx={1}>
+                  <Button onClick={() => { curtidas(post.id) }} ><ThumbUpIcon color='primary'></ThumbUpIcon></Button>
+                  <Typography style={{ color: 'black' }} align='center' variant="body2" component="p"> {post.curtir}</Typography>
+                </Box>
               </Box>
             </CardActions>
 

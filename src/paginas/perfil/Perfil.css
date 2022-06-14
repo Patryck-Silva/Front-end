@@ -1,0 +1,51 @@
+.card-principal {
+  display: flex;
+  border-radius: 32px 0;
+  padding: 20px;
+  margin: 20px;
+  flex-direction: column;
+
+}
+
+.card-container-imagem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 41.5px 13.5px 32px 0px;
+}
+
+.card-container-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 15px 32px 60px;
+  color: #fff;
+}
+
+.card-imagem {
+  height: 400px !important;
+  width: 300px !important;
+  object-fit: cover;
+}
+
+.h4Bio {
+  margin-top: 10px;
+}
+
+.h4Nasc {
+  margin-top: 70px;
+}
+
+.card-container-texto {
+  color: #000;
+  text-align: left;
+  margin: 10px 15px 32px 0px;
+}
+
+.card-container-texto2 {
+
+  color: #000;
+  text-align: left;
+
+  margin: 10px 15px 32px 0px;
+}

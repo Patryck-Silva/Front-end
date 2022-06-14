@@ -1,89 +1,123 @@
-/* importando fonte */
+@import url('https://fonts.googleapis.com/css2?family=Mohave:wght@300;400;600;700&family=Podkova&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Magra:wght@400;700&family=Poppins:wght@100;400;600;700;800;900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
-
-/* É o Grid maior por trás dos dois */
-.gridmaior {
-  background-image: url('https://i.imgur.com/fhxWLFt.png');
-  height: calc(100vh - 108px - 108px);
-  align-items: center;
-  justify-content: center;
-}
-
-/* Grid da box transparente com texto */
-.grid1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-/* box transparente */
-.box1 {
-  /*posicionamento */
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  width: 309px;
-  /* coloração */
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 20px 0 #e9de6f;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px) !important;
-  border-radius: 10px;
-  border: 1px solid #e7e16c;
-  /* tamanho da box */
-  height: 400px;
-  /* alinhamento do texto */
-  text-align: center;
-}
-
-/* texto da box transparente */
-.texto {
-  color: #ffffff;
-  font-family: 'Amatic SC', cursive !important;
-  font-size: 40px !important;
-}
-
-/* segundo texto */
-.text2 {
-  color: #ffffff;
-  font-family: 'Amatic SC', cursive !important;
-  font-size: 21px !important;
-}
-
-/* Grid da imagem */
-.grid2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* botao */
-.butao {
-  margin-top: 32px;
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 20px 0 #e9de6f;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px) !important;
-  border-radius: 10px;
-  border: 1px solid #e7e16c;
-}
-
-/* Classe do botao cria pelo mui */
-.MuiButton-root {
-  color: #ffffff !important;
-  /* cor do texto do botao  */
-  font-family: 'Amatic SC', cursive !important;
-  font-size: 23px !important;
-}
-
-/* tirar sublinhado do botao logar */
-.text-decorator-none {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   text-decoration: none;
 }
 
-/* deixando listas sem estilos padrao */
-.list-decorator-none {
-  list-style: none;
+:root {
+  --black: #000000;
+  --soft-black: #1f1d1c;
+  --deep-grey: #2F3640;
+  --light-grey: #F5F6FA;
+  --medio-grey: #D9D9D9;
+  --white: #FFFFFF;
+  --verde-agua: #019393;
+  --laranja: #FF7F69;
+  --yellow: #ECEF50;
+  --margin: 90px;
+  --margin-top: 150px;
+  --padding-dinamico: clamp(35px, 8%, 70px);
+
 }
+
+.homePrincipal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(45deg, #019393, #ECEF50, #FF7F69, #BD4291);
+  background-size: 1000% 800%;
+  animation: colors 15s ease infinite;
+}
+
+
+
+.conteudo-direita {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--margin);
+  margin: var(--margin);
+  
+  background: rgba( 255, 255, 255, 0.8 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+@keyframes colors {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.fundoHome {
+  background-image: url(https://i.imgur.com/z6nEWwU.jpg?1);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  /* background-position: center; */
+}
+
+.titulo-Home{
+  border-bottom: 0.4px solid black;
+  color: linear-gradient(45deg, #019393, #ECEF50, #FF7F69, #BD4291);
+  padding: 20px;
+  font-size: 48px;
+  font-family: 'Poppins', sans-serif;
+
+
+}
+
+
+.texto-Home{
+  padding-top: 20px;
+  color: black;
+  font-size: 16px;
+  font-family: 'Mohave', serif;
+}
+
+.botao-Home{
+  margin-top: 30px;
+
+}
+
+.botaoHome1{
+
+  background-color: var(--yellow) !important;
+  border: none !important;
+  color: #000 !important;
+  font-family: 'Poppins', sans-serif !important;
+  width: 300px;
+  height: 65px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.botaoHome2{
+  margin-left: 20px !important;
+  background-color: var(--yellow) !important;
+  border: none !important;
+  color: #000 !important;
+  font-family: 'Poppins', sans-serif !important;
+  width: 300px !important;
+  height: 65px !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+}
+

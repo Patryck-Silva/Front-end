@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
-import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
+import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText, Box } from "@material-ui/core"
 import './CadastroPostagem.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import Temas from '../../../models/Temas';
@@ -151,19 +151,26 @@ function CadastroPost() {
   }
 
   function back() {
-    navigate('/postagem')
+    navigate('/feed')
   }
-
   return (
-    <Container maxWidth="sm" className="topo">
-      <form onSubmit={onSubmit}>
-        <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
-        <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
-        <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+    <Container className="GridContainer">
+      <form onSubmit={onSubmit} className='Forms'>
+        <Box className='BoxPositionForm'>
+          <Box className='BoxInputs'>
+            <TextField value={postagem.titulo} className='inputTitle' onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="title" variant="outlined" name="titulo" margin="normal" />
+            <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="description" name="texto" variant="outlined" margin="normal" className='inputTitle' />
+          </Box>
+          <Box className='BoxMidia'>
+            <TextField value={postagem.midia} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="midia" label="text" name="midia" variant="outlined" margin="normal" className='inputTextArea' />
+          </Box>
 
-        <FormControl >
+
+        </Box>
+        <FormControl className='selectTema' >
           <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
           <Select
+
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"
             onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
@@ -178,8 +185,8 @@ function CadastroPost() {
             }
           </Select>
           <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-          <Button type="submit" variant="contained" color="primary">
-            Finalizar
+          <Button type="submit" variant="contained" color="primary" className='BotaoForm'>
+            <span className="button-content"> Criar postagem</span>
           </Button>
         </FormControl>
       </form>

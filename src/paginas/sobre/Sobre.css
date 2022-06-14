@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Mohave:wght@300;400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mohave:wght@300;400;600;700&family=Podkova&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Magra:wght@400;700&family=Poppins:wght@100;400;600;700;800;900&display=swap');
 
+/* font-family: 'Magra', sans-serif;
+font-family: 'Poppins', sans-serif; */
 * {
     margin: 0;
     padding: 0;
@@ -36,7 +38,7 @@
     min-height: 100vh;
 }
 
-.sobre-introducao-cabecalho{
+.sobre-introducao-cabecalho {
     margin: var(--margin);
     display: flex;
     flex-direction: row;
@@ -45,38 +47,38 @@
 }
 
 
-.sobre-introducao-cabecalho-textos{
+.sobre-introducao-cabecalho-textos {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    
+
 
 }
 
-.sobre-introducao-cabecalho-texto1{
+.sobre-introducao-cabecalho-texto1 {
     color: #C3BCBC;
     font-size: 24px;
-    
+
 }
 
-.sobre-introducao-cabecalho-texto2{
+.sobre-introducao-cabecalho-texto2 {
     color: white;
     margin-top: 20px;
     font-size: 48px;
     font-family: 'Mohave', sans-serif;
-    
+
 }
 
-.sobre-img{
+.sobre-img {
     display: flex;
-    margin-left:500px;
+    margin-left: 500px;
 }
 
 
 
 /* container textos secundários */
 
-.introducao-textos-secundarios{
+.introducao-textos-secundarios {
 
     display: flex;
     flex-direction: column;
@@ -86,7 +88,7 @@
 
 }
 
-.introducao-textos-secundarios-p{
+.introducao-textos-secundarios-p {
     padding-top: 20px;
     color: white;
     font-size: 24px;
@@ -108,197 +110,13 @@
 
 }
 
-.sobre-devs-titulo{
+.sobre-devs-titulo {
     border-bottom: 0.4px solid black;
     color: white;
     padding: 20px;
     margin-top: var(--margin-top);
     font-size: 48px;
     font-family: 'Mohave', sans-serif;
-
-
-}
-
-.sobre-devs-cards{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: var(--margin);
-    width: 100%;
-    
-}
-
-.sobre-devs-cards2{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-bottom: var(--margin-top);
-    width: 100%;
-}
-
-/* =========================CSS CARD ======================== */
-
-.border {
-    height: 370px;
-    width: 290px;
-    background: transparent;
-    border-radius: 10px;
-    transition: border 1s;
-
-}
-
-.border:hover {
-    border: 1px solid rgb(255, 255, 255);
-}
-
-.card {
-
-    background: #808080;
-    border-radius: 10px;
-    transition: background 0.8s;
-    overflow: hidden;
-    background: #000;
-    box-shadow: 0 70px 63px -60px #000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: var(--padding-dinamico);
-   
-}
-
-
-/* CSS DO CARD */
-
-/* =======BEA======== */
-
-.card1 {
-
-    background: url("https://i.imgur.com/5GK7ee6.jpg") center center no-repeat;
-    background-size: 300px;
-}
-
-.card1:hover {
-
-    background: url("https://i.imgur.com/5GK7ee6.jpg") left center no-repeat;
-    background-size: 600px;
-}
-
-.card1:hover h2 {
-    opacity: 1;
-}
-
-.card1:hover .icons {
-    opacity: 1;
-}
-
-/* =======CIPRI======== */
-
-.card2 {
-
-    background: url("https://i.pinimg.com/736x/66/93/5b/66935bdcd27a216c8c5bc73e2003cd43--wallpapers-android-beyonce-knowles.jpg") center center no-repeat;
-    background-size: 300px;
-}
-
-.card2:hover {
-
-    background: url("https://i.pinimg.com/736x/66/93/5b/66935bdcd27a216c8c5bc73e2003cd43--wallpapers-android-beyonce-knowles.jpg") left center no-repeat;
-    background-size: 600px;
-}
-
-.card2:hover h2 {
-    opacity: 1;
-}
-
-.card2:hover .icons {
-    opacity: 1;
-}
-
-/* =======JONATHAN======== */
-
-.card3 {
-
-    background: url("https://i.pinimg.com/originals/53/1b/a3/531ba3fac803b6b40b9f85fd6b5733f4.jpg") center center no-repeat;
-    background-size: 300px;
-}
-
-.card3:hover {
-
-    background: url("https://i.pinimg.com/originals/53/1b/a3/531ba3fac803b6b40b9f85fd6b5733f4.jpg") left center no-repeat;
-    background-size: 600px;
-}
-
-.card3:hover h2 {
-    opacity: 1;
-}
-
-.card3:hover .icons {
-    opacity: 1;
-}
-
-/* =======PATRYCK======== */
-
-.card4 {
-
-    background: url("https://i.imgur.com/hwtUNqU.jpg.jpg") center center no-repeat;
-    background-size: 300px;
-}
-
-.card4:hover {
-
-    background: url("https://i.imgur.com/hwtUNqU.jpg") left center no-repeat;
-    background-size: 600px;
-}
-
-.card4:hover h2 {
-    opacity: 1;
-}
-
-.card4:hover .icons {
-    opacity: 1;
-}
-
-/* =======PEDRO======== */
-
-.card5 {
-
-    background: url("https://conteudo.imguol.com.br/c/entretenimento/4e/2021/05/05/kanye-west-1620233547131_v2_3x4.jpg") center center no-repeat;
-    background-size: 300px;
-}
-
-.card5:hover {
-
-    background: url("https://conteudo.imguol.com.br/c/entretenimento/4e/2021/05/05/kanye-west-1620233547131_v2_3x4.jpg") left center no-repeat;
-    background-size: 600px;
-}
-
-.card5:hover h2 {
-    opacity: 1;
-}
-
-.card5:hover .icons {
-    opacity: 1;
-}
-
-/* =======VIVI======== */
-
-.card6 {
-
-    background: url("https://i.pinimg.com/736x/66/93/5b/66935bdcd27a216c8c5bc73e2003cd43--wallpapers-android-beyonce-knowles.jpg") center center no-repeat;
-    background-size: 300px;
-}
-
-.card6:hover {
-
-    background: url("https://i.pinimg.com/736x/66/93/5b/66935bdcd27a216c8c5bc73e2003cd43--wallpapers-android-beyonce-knowles.jpg") left center no-repeat;
-    background-size: 600px;
-}
-
-.card6:hover h2 {
-    opacity: 1;
-}
-
-.card6:hover .icons {
-    opacity: 1;
 }
 
 /* ============= */
@@ -330,34 +148,148 @@
     transition: opacity 1s;
 }
 
-.icone{
+.icone {
     height: 30px;
 }
 
-a { color: inherit; }
+a {
+    color: inherit;
+}
 
 /* ============================================================= */
-
-/* PÁGINA DE CONTATO */
+/* PÁGINA DE CONTATO TODO O CONTEUDO*/
 .sobre-contato {
-
     background-color: var(--light-grey);
     display: flex;
     flex-direction: column;
-    align-items: center;
     min-height: 100vh;
+    font-family: 'Magra', sans-serif;
+    padding: var(--margin);
+}
+
+/* TODAS AS PRIMEIRAS 3 SEÇÕES*/
+.sobre-contato-bloco {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--margin);
+}
+
+/*PRIMEIRO BLOCO - LINHA 01*/
+
+.sobre-contato-titulo {
+    font-size: 48px;
+    font-style: normal;
+}
+
+.sobre-contato-conversar {
+    display: flex;
+    flex-direction: column;
+    margin-right: var(--padding-dinamico);
+    margin-bottom: var(--margin);
+}
+
+
+.gif-contato {
+    width: 100%;
+    max-width: 625px;
+    height: 230px;
+}
+
+
+
+/*SEGUNDO BLOCO - LINHA 02 INPUTS*/
+
+.sobre-contato-quem {
+    display: flex;
+    flex-direction: column;
+    margin-right: var(--padding-dinamico);
+    margin-bottom: var(--margin);
+}
+
+.bloco2-inputs {
+    display: flex;
+}
+
+.bloco2-inputs-coluna{
+    margin-right: var(--padding-dinamico);
+}
+
+.bloco2-labels {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+
+.sobre-input-linha {
+    width: 100%;
+    background-color: var(--medio-grey);
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    padding: 25px 10px 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.sobre-input-linha:focus {
+    background-color: #F5F6FA;
+    /* border: 2px solid var(--white); */
+}
+
+/*TERCEIRO BLOCO - LINHA 03*/
+
+.sobre-contato-pensamentos {
+    display: flex;
+    flex-direction: column;
+    margin-right: var(--padding-dinamico);
 
 }
 
-.sobre-contato-cabecalho{
-    margin: var(--margin);
-    margin-top: var(--margin-top);
+.bloco3-labels {
+    width: 100%;
+    max-width: 625px;
+    display: block;
+    margin-bottom: 10px;
 }
 
-.sobre-contato-quem{
-    margin: var(--margin);
+.sobre-input-texto {
+    width: 100%;
+    height: 150px;
+    background-color: var(--medio-grey);
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    padding: 25px 10px 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.sobre-contato-oque{
-    margin: var(--margin);
+.sobre-input-texto:focus {
+    background-color: #F5F6FA;
+}
+
+
+/*QUARTO BLOCO - LINHA 04*/
+
+.sobre-contato-bloco4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--margin);
+    margin-bottom: var(--margin-top);
+}
+
+.botao-contato {
+    background-color: var(--yellow) !important;
+    border: none !important;
+    color: #000 !important;
+    font-family: 'Poppins', sans-serif !important;
+    width: 300px;
+    height: 65px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }

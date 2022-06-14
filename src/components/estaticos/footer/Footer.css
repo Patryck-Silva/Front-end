@@ -1,28 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Mohave:wght@300;400;600;700&family=Podkova&display=swap');
 
-.container-principal{
-    justify-content: center;
-    align-items: center;
-   background-color: blue;
-}
-.grid-footer{
-    display: flex;
-    justify-content:space-evenly;
+:root {
+    --black: #000000;
+    --soft-black: #1f1d1c;
+    --deep-grey: #2F3640;
+    --light-grey: #F5F6FA;
+    --medio-grey: #D9D9D9;
+    --white: #FFFFFF;
+    --verde-agua: #019393;
+    --laranja: #FF7F69;
+    --yellow: #ECEF50;
+    --margin: 90px;
+    --margin-top: 150px;
+    --padding-dinamico: clamp(35px, 8%, 70px);
 }
 
-   
-   .redes{
-       font-size: 60px !important;
-       color:white;
-   }
-   
-   .textos{
-        color: white !important;
-        text-decoration: none; 
-   }
 
-   .list-decorator-none{
-        list-style: none;
-        padding-right:150px;
-        margin-left: -40px;
+.footer{
+    background-color: var(--soft-black) !important;
 }
-  
+
+.textoFooter{
+    color: var(--yellow);
+    font-family: 'Mohave', sans-serif !important;
+
+}
+
+.icone{
+    font-size: 20 !important;
+    color: var(--laranja) !important;
+}

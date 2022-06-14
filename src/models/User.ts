@@ -8,8 +8,6 @@ interface User {
     bio: string,
     dataNascimento: string,
     tipo: string,
-
-
 }
 
 export default User;

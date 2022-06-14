@@ -1,51 +1,43 @@
-import React from "react";
+import React from 'react'
+import "./Footer.css"
+import { Box, Typography, Grid } from '@material-ui/core'
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import {Link} from 'react-router-dom';
-import { Typography, Box, Grid } from '@material-ui/core';
-import './Footer.css';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function Footer() {
   return (
     <>
-      <Grid className='container-principal'>
-        <Grid className="grid-footer" item xs={12}>
-          <Box className="textos">
-            <Typography variant="h4" align="left" gutterBottom > GrapHome </Typography>
-            <ul>
-              <li className="list-decorator-none">Sobre</li>
-              <li className='list-decorator-none'>Desenvolvedores</li>
-            </ul>
-          </Box>
-          <Box className="textos">
-            <Typography variant="h4" align="left" gutterBottom > Linkedin </Typography>
-            <ul>
-              <li className="list-decorator-none"><Link to='/Sobre'  className="textos">Beatriz Alves</Link></li>
-              <li className="list-decorator-none"><Link to='/Sobre' className="textos">Viviane Emilie</Link></li>
-              <li className="list-decorator-none"><Link to='/Sobre' className="textos">Patryck Silva</Link></li>
-              <li className="list-decorator-none"><Link to='/Sobre' className="textos">Cipriana Luis</Link></li>
-              <li className="list-decorator-none"><Link to='/Sobre' className="textos">Jonathan</Link></li>
-              <li className="list-decorator-none"><Link to='/Sobre' className="textos"> Pedro Henrique</Link></li>
-            </ul>
-          </Box>
-        </Grid>
-        <Grid>
-        <Box>
-            <Box paddingTop={1}>
-              <Typography variant="subtitle2" align="center" gutterBottom className='textos' >© 2020 Copyright:</Typography>
+
+        <Grid alignItems="center" item xs={12} className='footer'>
+
+          <Box className='rodape'>
+
+            <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
+              <Typography align="center" gutterBottom className='textoFooter'>Siga a GrapHome</Typography>
             </Box>
-            <Box>
-              <a target="_blank" href="https://brasil.generation.org">
-                <Typography variant="subtitle2" gutterBottom className='textos' align="center">graphomegen@gmail.com</Typography>
+
+            <Box display="flex" alignItems="center" justifyContent="center">
+              <a href="https://www.facebook.com/jonathasouzabrasil/" target="_blank">
+                <FacebookIcon className='icone' />
+              </a>
+              <a href="https://www.instagram.com/_jonathanbrasil/" target="_blank">
+                <InstagramIcon className='icone' />
+              </a>
+              <a href="https://www.linkedin.com/in/jonathanbrasil" target="_blank">
+                <LinkedInIcon className='icone' />
               </a>
             </Box>
+
           </Box>
+
+
         </Grid>
-      </Grid>
+
     </>
   )
 }
-
 
 export default Footer;

@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Mohave:wght@300;400;600;700&family=Podkova&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Magra:wght@400;700&family=Poppins:wght@100;400;600;700;800;900&display=swap');
+
+/* font-family: 'Magra', sans-serif;
+font-family: 'Poppins', sans-serif; */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cardTitulo{
+    color: var(--laranja);
+}
+
+.sobre-devs-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: var(--margin);
+    width: 100%;
+
+}
+
+.sobre-devs-cards2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: var(--margin-top);
+    width: 100%;
+}
+
+/* =========================CSS CARD ======================== */
+.iconeCards{
+    font-size: 20 !important;
+    color: var(--laranja) !important;
+}
+
+
+.border {
+    height: 370px;
+    width: 290px;
+    background: transparent;
+    border-radius: 10px;
+    transition: border 1s;
+
+}
+
+.border:hover {
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.card {
+
+    background: #808080;
+    border-radius: 10px;
+    transition: background 0.8s;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 70px 63px -60px #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: var(--padding-dinamico);
+
+}
+
+
+/* CSS DO CARD */
+
+/* =======BEA======== */
+
+.card1 {
+
+    background: url("https://i.imgur.com/5GK7ee6.jpg") center center no-repeat;
+    background-size: 300px;
+}
+
+.card1:hover {
+
+    background: url("https://i.imgur.com/5GK7ee6.jpg") left center no-repeat;
+    background-size: 600px;
+}
+
+.card1:hover h2 {
+    opacity: 1;
+}
+
+.card1:hover .icons {
+    opacity: 1;
+}
+
+/* =======CIPRI======== */
+
+.card2 {
+
+    background: url("https://i.imgur.com/TlLSBlZ.jpg?1") center center no-repeat;
+    background-size: 300px;
+}
+
+.card2:hover {
+
+    background: url("https://i.imgur.com/TlLSBlZ.jpg?1") left center no-repeat;
+    background-size: 600px;
+}
+
+.card2:hover h2 {
+    opacity: 1;
+}
+
+.card2:hover .icons {
+    opacity: 1;
+}
+
+/* =======JONATHAN======== */
+
+.card3 {
+
+    background: url("https://i.imgur.com/MebxgkX.jpg") center center no-repeat;
+    background-size: 300px;
+}
+
+.card3:hover {
+
+    background: url("https://i.imgur.com/MebxgkX.jpg") left center no-repeat;
+    background-size: 600px;
+}
+
+.card3:hover h2 {
+    opacity: 1;
+}
+
+.card3:hover .icons {
+    opacity: 1;
+}
+
+/* =======PATRYCK======== */
+
+.card4 {
+
+    background: url("https://i.imgur.com/hwtUNqU.jpg.jpg") center center no-repeat;
+    background-size: 300px;
+}
+
+.card4:hover {
+
+    background: url("https://i.imgur.com/hwtUNqU.jpg") left center no-repeat;
+    background-size: 600px;
+}
+
+.card4:hover h2 {
+    opacity: 1;
+}
+
+.card4:hover .icons {
+    opacity: 1;
+}
+
+/* =======PEDRO======== */
+
+.card5 {
+
+    background: url("https://i.imgur.com/eqkpuqP.jpg") center center no-repeat;
+    background-size: 300px;
+}
+
+.card5:hover {
+
+    background: url("https://i.imgur.com/eqkpuqP.jpg") left center no-repeat;
+    background-size: 600px;
+}
+
+.card5:hover h2 {
+    opacity: 1;
+}
+
+.card5:hover .icons {
+    opacity: 1;
+}
+
+/* =======VIVI======== */
+
+.card6 {
+
+    background: url("https://i.imgur.com/ucYZ8Dn.jpg") center center no-repeat;
+    background-size: 300px;
+}
+
+.card6:hover {
+
+    background: url("https://i.imgur.com/ucYZ8Dn.jpg") left center no-repeat;
+    background-size: 600px;
+}
+
+.card6:hover h2 {
+    opacity: 1;
+}
+
+.card6:hover .icons {
+    opacity: 1;
+}

@@ -1,3 +1,42 @@
-.text-decorator-none{
+.text-decorator-none {
     text-decoration: none;
+}
+
+.imgPostagem {
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.testando {
+    display: flex;
+    flex-direction: column-reverse;
+
+}
+
+.conteudo-card {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.linha-postagem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.coluna-postagem {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.box-tema {
+    display: flex;
+    justify-content: space-between;
+}
+
+.botoes-card {
+    justify-content: center;
 }

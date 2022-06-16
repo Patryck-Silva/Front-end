@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mohave:wght@300;400;600;700&family=Podkova&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mohave:wght@300;400;600;700&family=Podkova&display=swap%27');
 
 :root {
     --black: #000000;
@@ -18,10 +18,45 @@
 
 .footer{
     background-color: var(--soft-black) !important;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-texto-principal{
+    color: var(--light-grey);
+    font-size: 20px;
+}
+
+.footer-menus{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-texto-secundario{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: var(--medio-grey);
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    font-size: 16px;
+
+}
+
+.footer-texto{
+    color: #b4b4b4;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px !important;
+
 }
 
 .textoFooter{
-    color: var(--yellow);
+    padding-top: 10px;
+    color: var(--medio-grey);
     font-family: 'Mohave', sans-serif !important;
 
 }
@@ -29,4 +64,14 @@
 .icone{
     font-size: 20 !important;
     color: var(--laranja) !important;
+}
+
+
+.footer-redes{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

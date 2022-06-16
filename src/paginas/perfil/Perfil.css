@@ -1,16 +1,45 @@
 .card-principal {
+  background-image: url(https://i.imgur.com/Jcfti8A.png);
+  background-repeat: no-repeat;
   display: flex;
-  border-radius: 32px 0;
-  padding: 20px;
-  margin: 20px;
   flex-direction: column;
-
+  width: 100%;
+  max-width: 410px;
+  align-items: flex-end;
 }
 
-.card-container-imagem {
+.card-perfil{
+  padding: 80px;
+  height: 625px;
+  max-width: 410px;
+}
+
+/* ====foto do perfil da pessoa==== */
+.card-imagem{
+  max-width: 300px;
+  max-height: 400px;
+}
+
+.perfil-nome{
+  margin-top: 100px;
+  font-size: 30px;
+  color: white;
+}
+
+/* ======== BLOCO COM AS INFO E DADOS DO USER====== */
+
+.card-dados{
+  padding: 50px;
+}
+/* =========== */
+
+.card-botao{
+  justify-content: left;
+  padding-right: 20px;
+}
+
+/* .card-container-imagem {
   display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 41.5px 13.5px 32px 0px;
 }
 
@@ -23,9 +52,8 @@
 }
 
 .card-imagem {
-  height: 400px !important;
-  width: 300px !important;
-  object-fit: cover;
+  max-height: 400px !important;
+  max-width: 300px !important;
 }
 
 .h4Bio {
@@ -43,9 +71,7 @@
 }
 
 .card-container-texto2 {
-
   color: #000;
   text-align: left;
-
   margin: 10px 15px 32px 0px;
-}
+} */

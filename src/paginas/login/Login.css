@@ -1,17 +1,25 @@
 /* é o maior grid por tras do grid de login */
 .gridMaiorLogin {
-  background-image: url('https://i.imgur.com/fhxWLFt.png');
-  min-height: 100vh;
 
+  min-height: 100vh;
+  display: flex;
 }
 
 .imagemGraph {
   margin-bottom: 80px;
   margin-top: 80px;
+  width: 300px;
+  border:rgba(255, 255, 255, 0) solid 5px; 
+}
+
+/* AÇÃO NA LOGO QUANDO PASSA O MOUSE */
+.imagemGraph:hover {
+  width: 305px;
+  height: 142.5px;
 }
 
 .gridInputs {
-  background-color: #CE7150;
+  background-color: var(--light-grey);
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -19,10 +27,16 @@
 }
 
 .gridImagem {
-  background-color: #fff;
-  display: flex;
-  align-items: stretch;
+  justify-content: center;
+  background-color: #252525;
+
+  background-image: url(https://i.imgur.com/XeYi1SS.gif);
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
 }
+
+
 
 .CaixaInput {
   background-color: #fff;
@@ -33,9 +47,10 @@
   width: 233px;
   height: 38px;
   margin-top: 30px !important;
-  background-color: #E58E26 !important;
+  background-color: #7dbd9a !important;
   font-family: 'Poppins', sans-serif !important;
   font-size: 14px !important;
+  color: #fff !important;
 }
 
 .botaoCadastro {
@@ -52,5 +67,5 @@
 }
 
 .textoCadastro {
-  color: #fff;
+  color: #dd3052;
 }

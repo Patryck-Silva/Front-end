@@ -66,6 +66,8 @@ font-family: 'Poppins', sans-serif; */
     margin-top: 20px;
     font-size: 48px;
     font-family: 'Mohave', sans-serif;
+    text-shadow: -5px 4px 0px #ffffff3b;
+    /* -10px 10px 0px #00e6e6, -15px 15px 0px #FF7F69, -20px 20px 0px #ECEF50 */
 
 }
 

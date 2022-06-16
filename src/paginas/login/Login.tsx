@@ -108,8 +108,13 @@ function Login() {
 
     // grid da imagem da esquerda
     <Grid container className='gridMaiorLogin'>
-      <Grid item xs={6} className="gridInputs">
-        <img src="https://i.imgur.com/9raJyoH.png" className='imagemGraph' alt="" />
+
+      <Grid item xs={7} className="gridImagem"></Grid>
+
+      <Grid item xs={5} className="gridInputs">
+        <Link to='/home'>
+          <img src="https://i.imgur.com/ZJJ7Qs3.png" className='imagemGraph' alt="Logo da GrapHome" />
+        </Link>
         <Box className='BoxForm'>
 
           <form onSubmit={logar}>
@@ -123,16 +128,10 @@ function Login() {
             </Box>
           </form>
 
-          <Box marginTop={12} >
-            <Typography align='left' className='textoCadastro'>Não tem uma conta?</Typography>
-            <Link to='/cadastro' className='text-decorator-none'>
-              <Button className='botaoCadastro' type='submit' variant='contained'>Cadastre-se</Button>
-            </Link>
+          <Box marginTop={4} >
+            <Typography align='center' className='textoCadastro'>Não tem uma conta? <Link to='/cadastro'>Cadastre-se</Link></Typography>
           </Box>
         </Box>
-      </Grid>
-      <Grid item xs={6} className="gridImagem" >
-        <img src="https://i.imgur.com/a4Oaalj.png" alt="gif graphome" />
       </Grid>
     </Grid>
   )

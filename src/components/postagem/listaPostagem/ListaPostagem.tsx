@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 
@@ -6,16 +6,20 @@ import { Link, useNavigate } from 'react-router-dom'
 
 import { useSelector } from 'react-redux'
 import { TokenState } from '../../../store/tokens/tokensReducer';
-
+import DeleteIcon from '@mui/icons-material/Delete';
+import IconButton from '@mui/material/IconButton';
 import Postagem from '../../../models/Postagem'
-import { busca, put } from '../../../services/Service'
+import { put } from '../../../services/Service'
 import { toast } from 'react-toastify';
 import './ListaPostagem.css'
 
-function ListaPostagem() {
 
-  const [posts, setPosts] = useState<Postagem[]>([])
 
+interface Props {
+  getPost: () => void,
+  posts: Postagem[]
+}
+const ListaPostagem: FC<Props> = ({ getPost, posts }): JSX.Element => {
   const [post, setPost] = useState<Postagem>({
     id: 0,
     titulo: "",
@@ -32,23 +36,6 @@ function ListaPostagem() {
 
   let navigate = useNavigate();
 
-  useEffect(() => {
-    if (token === "") {
-      toast.error('Você precisa estar logado para completar a ação', {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-        theme: "colored",
-
-      }); navigate("/login")
-
-    }
-  }, [token])
-
   async function curtidas(id: number) {
     await put(`/postagem/curtir/${id}`, post, setPost, {
       headers: {
@@ -58,54 +45,58 @@ function ListaPostagem() {
     );
     getPost()
   }
-
-  async function getPost() {
-    await busca("/postagem", setPosts, {
-      headers: {
-        'Authorization': token
-      }
-    })
-  }
-
-  useEffect(() => {
-    getPost()
-  }, [posts.length])
-
   return (
 
-    <>
+    <Box className='testando'>
       {posts.map(post => (
+
+
         <Box m={2} >
           <Card variant="outlined">
-            <CardContent>
-              <img src={post.midia} alt="" width='500px' height='500px' />
-              <Typography color="textSecondary" gutterBottom>
-                Postagens
-              </Typography>
 
-              <Typography variant="h5" component="h2">
-                {post.titulo}
-              </Typography>
+            <CardContent className='conteudo-card'>
 
-              <Typography variant="body2" component="p">
-                {post.texto}
-              </Typography>
 
-              <Typography variant="body2" component="p">
-                {post.tema?.descricao}
-              </Typography>
 
-              <Typography variant='body2' component='p'>
-                {post.data.split("-").reverse().join("-")}
-              </Typography>
+              <Box className='box-tema'>
+                <Typography variant="body2" component="p">
+                  <h5>TEMA: </h5>{post.tema?.descricao}
+                </Typography>
+                <Typography variant='body2' component='p'>
+                  <h5>Ultima atualização: </h5>{post.data.split("-").reverse().join("-")}
+                </Typography>
+              </Box>
+
+              <Box className='linha-postagem'>
+
+                <Box className='coluna-postagem'>
+
+                  <Typography variant="h5" component="h2">
+                    {post.titulo}
+                  </Typography>
+
+                  <Typography variant="body2" component="p">
+                    {post.texto}
+                  </Typography>
+
+
+
+                </Box>
+
+                <img src={post.midia} alt="" className='imgPostagem' />
+
+              </Box>
+
+
+
             </CardContent>
 
-            <CardActions>
+            <CardActions className='botoes-card'>
               <Box display="flex" justifyContent="center" mb={1.5}>
 
                 <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
                   <Box mx={1}>
-                    <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                    <Button variant="outlined" className="marginLeft" size='small'>
                       Atualizar
                     </Button>
                   </Box>
@@ -113,13 +104,13 @@ function ListaPostagem() {
 
                 <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
                   <Box mx={1}>
-                    <Button variant="contained" size='small' color="secondary">
+                    <Button variant="outlined" color='secondary' size='small' startIcon={<DeleteIcon />}>
                       Deletar
                     </Button>
                   </Box>
                 </Link>
                 <Box mx={1}>
-                  <Button onClick={() => { curtidas(post.id) }} ><ThumbUpIcon color='primary'></ThumbUpIcon></Button>
+                  <Button onClick={() => { curtidas(post.id) }} style={{ marginTop: '-11px' }} ><ThumbUpIcon color='info'></ThumbUpIcon></Button>
                   <Typography style={{ color: 'black' }} align='center' variant="body2" component="p"> {post.curtir}</Typography>
                 </Box>
               </Box>
@@ -128,8 +119,8 @@ function ListaPostagem() {
           </Card>
         </Box>
       ))}
-    </>
+    </Box>
   )
 }
 
-export default ListaPostagem
+export default ListaPostagem;

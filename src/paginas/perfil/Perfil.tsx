@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Box } from '@material-ui/core'
+import { Box, Button } from '@material-ui/core'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
@@ -8,6 +8,7 @@ import { buscaId } from '../../services/Service'
 
 import './Perfil.css'
 import { TokenState } from '../../store/tokens/tokensReducer'
+import { toast } from 'react-toastify'
 
 function Perfil() {
 
@@ -37,7 +38,16 @@ function Perfil() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado")
+      toast.error('Você precisa estar logado!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+      });
       history("/login")
     }
   }, [token])
@@ -57,30 +67,34 @@ function Perfil() {
     }
   }, [id])
 
+  function edit() {
+    history('/atualizarusuario')
+  }
+
   return (
     <Box className='card-principal'>
-      <Box className='card-container-imagem'>
-        <img className='card-imagem'
-          src={user.foto}
-        />
+
+      <Box className='card-perfil'>
+        <img className='card-imagem' src={user.foto} />
+        <h2 className='perfil-nome'>{user.nome}</h2>
       </Box>
 
-      <Box className='card-container-info'>
-        <Box>
-          <h1>{user.nome}</h1>
-          <hr />
-        </Box>
+      <Box className='card-dados'>
+        <h2>{user.nome}</h2>
+        <h4>Data de nascimento: </h4>
+        <p>{user.dataNascimento.split("-").reverse().join("-")}</p>
+        <h4>Bio:</h4>
+        <p>{user.bio}</p>
+        <h4>tipo de usuário:</h4>
+        <p>{user.tipo}</p>
       </Box>
 
-      <h4 className='h4Nasc'>Data de nascimento</h4>
-      <p className='card-container-texto2'>
-        {user.dataNascimento.split("-").reverse().join("-")}
-      </p>
+      {/* CLASSE DO BUTTON TEMPORARIO */}
+      <Box className='card-botao'>
+        <Button className="botao-contato" onClick={edit}>Editar perfil</Button>
+      </Box>
 
-      <h4 className='h4Bio'>Bio:</h4>
-      <p className='card-container-texto'>
-        {user.bio}
-      </p>
+
     </Box>
   )
 }

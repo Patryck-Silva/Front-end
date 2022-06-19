@@ -35,10 +35,10 @@ function Footer() {
         <Box className='footer-redes'>
           <Typography align="center" gutterBottom className='textoFooter'>Siga a GrapHome</Typography>
           <Box className='footer-redes-icones'>
-            <a href="https://github.com/Graphome-Project" target="_blank">
+            <a href="https://www.facebook.com/Projeto-Graphome-102091639217077/" target="_blank">
               <FacebookIcon className='icone' />
             </a>
-            <a href="https://github.com/Graphome-Project" target="_blank">
+            <a href="https://www.instagram.com/grap.home/" target="_blank">
               <InstagramIcon className='icone' />
             </a>
             <a href="https://github.com/Graphome-Project" target="_blank">
